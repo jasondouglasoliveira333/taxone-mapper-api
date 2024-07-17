@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: mappper-taxone-backend-image
-        image: docker.io/jasondouglasoliveira333/java:3333333333
+        image: docker.io/jasondouglasoliveira333/java:${BUILD_NUMBER}
         env:
           - name: OUR_PARAMS
             value: OUR_VALUE
