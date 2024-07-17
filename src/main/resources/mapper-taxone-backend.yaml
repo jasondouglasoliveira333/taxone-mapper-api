@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mappper-taxone-backend-svc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8180
+    targetPort: 8180
+  selector:
+    app: mappper-taxone-backend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mappper-taxone-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mappper-taxone-backend
+  template:
+    metadata:
+      labels:
+        app: mappper-taxone-backend
+    spec:
+      containers:
+      - name: mappper-taxone-backend-image
+        image: docker.io/jasondouglasoliveira333/java:33333333
+        env:
+          - name: OUR_PARAMS
+            value: OUR_VALUE
+          - name: OUR_PARAMS2
+            value: OUR_VALUE2
+        ports:
+        - containerPort: 8180
