@@ -80,7 +80,6 @@ public class SmtpEmailService {
 			SmtpEmailService s = new SmtpEmailService();
 			s.host = "smtp.gmail.com";
 			s.username = "jasondouglasoliveira33333@gmail.com";
-			s.password = "ygwqycjesyhjmphf";
 			s.init();
 			String corpo = "Erro no processamento do agendamento #id do Agendamento: 31265";
 			s.sendMail(Arrays.asList("jasondouglasoliveira333@gmail.com"), "Test", corpo);
